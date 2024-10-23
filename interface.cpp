@@ -144,5 +144,9 @@ void runTestsAndDisplayResults() {
             customTimes,
             standardTimes
     );
-    displayCharts(elementCounts, customTimes, standardTimes);
+    displayCharts(
+            elementCounts,
+            customTimes,
+            standardTimes
+    );
 }

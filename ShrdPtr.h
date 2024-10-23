@@ -125,18 +125,18 @@ public:
     explicit ShrdPtr(T *p = nullptr)
             : ptr(p), ref_count(p ? new size_t(1) : nullptr) {}
 
-    ShrdPtr(const ShrdPtr<T> &other)
+    ShrdPtr(const ShrdPtr<T[]> &other)
             : ptr(other.ptr), ref_count(other.ref_count) {
         add_ref();
     }
 
     template<typename U>
-    ShrdPtr(const ShrdPtr<U> &other)
+    ShrdPtr(const ShrdPtr<U[]> &other)
             : ptr(other.ptr), ref_count(other.ref_count) {
         add_ref();
     }
 
-    ShrdPtr<T> &operator=(const ShrdPtr<T> &other) {
+    ShrdPtr<T[]> &operator=(const ShrdPtr<T[]> &other) {
         if (this != &other) {
             release();
             ptr = other.ptr;
@@ -147,7 +147,7 @@ public:
     }
 
     template<typename U>
-    ShrdPtr<T> &operator=(const ShrdPtr<U> &other) {
+    ShrdPtr<T[]> &operator=(const ShrdPtr<U[]> &other) {
         release();
         ptr = other.ptr;
         ref_count = other.ref_count;

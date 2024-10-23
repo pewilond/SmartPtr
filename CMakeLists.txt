@@ -13,7 +13,7 @@ add_executable(lab1_3
         main.cpp
         interface.cpp
         test.cpp
-        displayCharts.cpp
+#        displayCharts.cpp
         DynamicArray.h
         DynamicArraySmart.h
         LinkedList.h
@@ -22,7 +22,7 @@ add_executable(lab1_3
         ShrdPtr.h
         UnqPtr.h
         test.h
-        displayCharts.h
+#        displayCharts.h
         interface.h
 )
 
